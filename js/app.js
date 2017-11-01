@@ -4,6 +4,7 @@ class Enemy {
         this.sprite = 'images/enemy-bug.png';
         this.x = (Math.random() * 600) - 720;//Math.random() * (-120 - -520) + -520;//-120 -520;
         this.y = [60, 143, 227][Math.floor(Math.random() * 3)];
+        this.speed = [50, 100, 200, 300][Math.floor(Math.random() * 4)];
     }
 
 //    function getRandomArbitrary(min, max) {
@@ -12,7 +13,7 @@ class Enemy {
 
     update(dt) {
 //        this.x += speed;//-120 -420;
-        this.x += 200 * dt;
+        this.x += this.speed * dt;
     }
 
     render() {
