@@ -2,12 +2,17 @@
 class Enemy {
     constructor() {
         this.sprite = 'images/enemy-bug.png';
-        this.x = 0;
-        this.y = 60;
+        this.x = (Math.random() * 600) - 720;//Math.random() * (-120 - -520) + -520;//-120 -520;
+        this.y = [60, 143, 227][Math.floor(Math.random() * 3)];
     }
 
-    update(dt) {
+//    function getRandomArbitrary(min, max) {
+//      return Math.random() * (max - min) + min;
+//    }
 
+    update(dt) {
+//        this.x += speed;//-120 -420;
+        this.x += 200 * dt;
     }
 
     render() {
@@ -57,7 +62,9 @@ class Player {
 
 let allEnemies = [];
 const enemy1 = new Enemy();
-allEnemies.push(enemy1);
+const enemy2 = new Enemy();
+const enemy3 = new Enemy();
+allEnemies.push(enemy1, enemy2, enemy3);
 const player = new Player();
 
 // Now write your own player class
