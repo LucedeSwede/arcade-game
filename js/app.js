@@ -24,7 +24,8 @@ class Enemy {
     }
 
     randomSpeed() {
-        return [50, 100, 200, 300][Math.floor(Math.random() * 4)];
+        return ((Math.random() * 150) + 50);
+//        return [50, 100, 200, 300][Math.floor(Math.random() * 4)];
     }
 
     update(dt) {
@@ -90,7 +91,10 @@ let allEnemies = [];
 const enemy1 = new Enemy();
 const enemy2 = new Enemy();
 const enemy3 = new Enemy();
-allEnemies.push(enemy1);//, enemy2, enemy3);
+const enemy4 = new Enemy();
+const enemy5 = new Enemy();
+
+allEnemies.push(enemy1, enemy2, enemy3, enemy4, enemy5);
 
 
 
