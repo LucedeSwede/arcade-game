@@ -72,18 +72,50 @@ class Enemy {
 class Player {
     constructor() {
         this.sprite = 'images/char-boy.png';
+        this.x = 200;
+        this.y = 375;
+//        this.speed = 100;
     }
 
-    update(dt) {
-
+    update() {
+//        this.y += vertical;
+//        player.handleInput();
     }
+
+//        this.x += this.speed * dt;
+//    }
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
-    handleInput() {
-
+    handleInput(key) {
+        switch(key) {
+            case 'up':
+//                this.update(-90, 0);
+                this.y -= 84;
+                break;
+//                this.update();
+//                break;
+            case 'down':
+//                this.update(90, 0);
+//                return 90;
+                this.y += 84;
+//                this.update();
+                break;
+            case 'left':
+//                this.update(-100);
+//                return -100;
+                this.x -= 100;
+//                this.update();
+                break;
+            case 'right':
+//                this.update(100);
+//                return 100;
+                this.x += 100;
+//                this.update();
+        }
+        console.log(this.x, this.y);
     }
 }
 
@@ -122,4 +154,5 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+//    console.log(allowedKeys[e.keyCode]);
 });
