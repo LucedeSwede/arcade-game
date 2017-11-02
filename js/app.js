@@ -16,7 +16,7 @@ class Enemy {
 //    }
 
     randomPosX() {
-        return ((Math.random() * 400) - 520);
+        return ((Math.random() * 800) - 920);
     }
 
     randomPosY() {
