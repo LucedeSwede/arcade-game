@@ -20,7 +20,7 @@ class Enemy {
     }
 
     randomPosY() {
-        return [60, 143, 227][Math.floor(Math.random() * 3)];
+        return [59, 143, 227][Math.floor(Math.random() * 3)];
     }
 
     randomSpeed() {
@@ -38,6 +38,7 @@ class Enemy {
         } else {
             this.x += this.speed * dt;
         }
+//        console.log(this.x);
 //        (this.x > 550) ? (this.x = this.x - 850) : (this.x += this.speed * dt);
 
     }
@@ -80,6 +81,15 @@ class Player {
     }
 
     update() {
+        allEnemies.forEach(function(enemy) {
+            if (enemy.x > player.x - 68 &&
+                enemy.x < player.x + 55 &&
+                enemy.y === player.y + 20) {
+                player.x = player.initialX;
+                player.y = player.initialY;
+            }
+        });
+//        if (this.y)
 //        this.y += vertical;
 //        player.handleInput();
     }
@@ -156,7 +166,7 @@ const player = new Player();
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-
+//collision player 200, 207
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
