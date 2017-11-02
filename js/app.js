@@ -71,9 +71,11 @@ class Enemy {
 
 class Player {
     constructor() {
+        this.initialX = 200;
+        this.initialY = 375;
         this.sprite = 'images/char-boy.png';
-        this.x = 200;
-        this.y = 375;
+        this.x = this.initialX;
+        this.y = this.initialY;
 //        this.speed = 100;
     }
 
@@ -93,26 +95,39 @@ class Player {
         switch(key) {
             case 'up':
 //                this.update(-90, 0);
-                this.y -= 84;
+                if (this.y <= 39) {
+                    this.x = this.initialX;
+                    this.y = this.initialY;
+//                    console.log(this.x, this.y);
+                } else {
+                    this.y -= 84;
+                }
+//                this.y <= -45 ? (this.x, this.y = this.initialX, this.initialY) : this.y -= 84;
                 break;
 //                this.update();
 //                break;
             case 'down':
 //                this.update(90, 0);
 //                return 90;
-                this.y += 84;
+                if (this.y < 375) {
+                    this.y += 84;
+                }
 //                this.update();
                 break;
             case 'left':
 //                this.update(-100);
 //                return -100;
-                this.x -= 100;
+                if (this.x > 0) {
+                    this.x -= 100;
+                }
 //                this.update();
                 break;
             case 'right':
 //                this.update(100);
 //                return 100;
-                this.x += 100;
+                if (this.x < 400) {
+                    this.x += 100;
+                }
 //                this.update();
         }
         console.log(this.x, this.y);
