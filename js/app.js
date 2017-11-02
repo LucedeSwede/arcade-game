@@ -1,9 +1,13 @@
 // Enemies our player must avoid
 class Enemy {
     constructor() {
+//        let randomPosX = () => ((Math.random() * 200) - 320);//Math.random() * (-120 - -520) + -520;//-120 -520;
+//        let randomPosX = function() {
+//            return (Math.random() * 200) - 320;
+//        };
         this.sprite = 'images/enemy-bug.png';
-        this.x = (Math.random() * 200) - 320;//Math.random() * (-120 - -520) + -520;//-120 -520;
-        this.y = [60, 143, 227][Math.floor(Math.random() * 3)];
+        this.x = this.randomPosX();//(Math.random() * 200) - 320;
+        this.y = this.randomPosY();//[60, 143, 227][Math.floor(Math.random() * 3)];
         this.speed = [50, 100, 200, 300][Math.floor(Math.random() * 4)];
     }
 
@@ -11,9 +15,24 @@ class Enemy {
 //      return Math.random() * (max - min) + min;
 //    }
 
+    randomPosX() {
+        return ((Math.random() * 200) - 320);
+    }
+
+    randomPosY() {
+        return [60, 143, 227][Math.floor(Math.random() * 3)];
+    }
+
     update(dt) {
 //        this.x += speed;//-120 -420;
-        this.x += this.speed * dt;
+//        this.x += this.speed * dt;
+        if (this.x > 550) {
+            this.x -= 850;
+        } else {
+            this.x += this.speed * dt;
+        }
+//        (this.x > 550) ? (this.x = this.x - 850) : (this.x += this.speed * dt);
+
     }
 
     render() {
@@ -65,7 +84,10 @@ let allEnemies = [];
 const enemy1 = new Enemy();
 const enemy2 = new Enemy();
 const enemy3 = new Enemy();
-allEnemies.push(enemy1, enemy2, enemy3);
+allEnemies.push(enemy1);//, enemy2, enemy3);
+
+
+
 const player = new Player();
 
 // Now write your own player class
