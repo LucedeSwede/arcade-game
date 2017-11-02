@@ -28,6 +28,7 @@ class Enemy {
 //        this.x += this.speed * dt;
         if (this.x > 550) {
             this.x -= 850;
+            this.y = this.randomPosY();
         } else {
             this.x += this.speed * dt;
         }
