@@ -88,6 +88,14 @@ class Player {
                     //  Send player back to initial position on reaching water block
                     this.x = this.initialX;
                     this.y = this.initialY;
+                    increaseScore();
+                    //  Add class plus1fade to hidden text to show +1 animation
+                    plus.className += " plus1fade";
+                    //  Set to original class name to be able to
+                    //  trigger animation again on next win
+                    setTimeout(function() {
+                        plus.className = "plus1";
+                    }, 800);
                 } else {
                     this.y -= 84;//  Move player up by one block
                 }
@@ -113,6 +121,9 @@ class Player {
     }
 }
 
+//  Hidden +1 to show when player reaches water block
+let plus = document.getElementById('plus');
+
 //  Instantiate objects
 let allEnemies = [];
 const enemy1 = new Enemy();
@@ -134,3 +145,10 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//  Increment player score by 1
+function increaseScore() {
+    let score = document.getElementById("score");
+    let newScore = Number(score.innerHTML) + 1;
+    score.innerHTML = newScore;
+}
