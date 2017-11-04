@@ -1,6 +1,14 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Web app that recreates the classic Frogger arcade game, with the following features:
+1. Random enemy speed and positions (among three rows); and
+2. Scoring system.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+This project is done under the [Front-End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) of [Udacity](https://www.udacity.com/). Starter code available [here](https://github.com/udacity/frontend-nanodegree-arcade-game).
+
+## Instructions to Play
+
+1. Clone repository to your computer.
+2. In the arcade-game folder, open index.html.
+
+Using the arrow keys, lead our main character to the water blocks at the top. Be careful not to get hit by enemy bugs!
