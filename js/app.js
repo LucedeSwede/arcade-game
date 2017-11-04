@@ -27,9 +27,9 @@ class Enemy {
         return [59, 143, 227][Math.floor(Math.random() * 3)];
     }
 
-    //  Return a random number between 50 and 200
+    //  Return a random number between 50 and 600
     randomSpeed() {
-        return ((Math.random() * 150) + 50);
+        return ((Math.random() * 550) + 50);
     }
 
     //  Update the enemy's position
